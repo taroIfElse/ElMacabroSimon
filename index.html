@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Simon Dice</title>
+</head>
+<body>
+    <div class="tablero">
+        <button id="empezar" onclick="empezar()">Empezar</button>
+        <div class="cuadrados">
+            <div class="cuadrado cuadrado1" onclick="validar(0)"></div>
+            <div class="cuadrado cuadrado2" onclick="validar(1)"></div>
+            <div class="cuadrado cuadrado3" onclick="validar(2)"></div>
+            <div class="cuadrado cuadrado4" onclick="validar(3)"></div>
+        </div>
+        <div id="contador">Nivel: 0</div>
+        <div id="puntuacion">Puntuación: 0</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
