@@ -42,3 +42,9 @@ body {
 .iluminado {
     box-shadow: 0 0 50px rgb(10, 0, 0);
 }
+
+@media (max-width: 768px) {
+    .cuadrado {
+        height: 150px;
+    }
+}
