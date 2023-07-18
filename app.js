@@ -24,10 +24,8 @@ function siguienteNivel() {
   nivel++;
   contador = 0;
   actualizarContador();
-
   var nuevoCuadrado = generarCuadradoAleatorio();
   secuencia.push(nuevoCuadrado);
-
   iluminarSecuencia();
 }
 
@@ -90,7 +88,6 @@ function reiniciarJuego() {
 function actualizarContador() {
   var contadorElemento = document.getElementById("contador");
   contadorElemento.textContent = "Nivel: " + nivel;
-
   var puntuacionElemento = document.getElementById("puntuacion");
   puntuacionElemento.textContent = "Puntuación: " + puntuacion;
 }
