@@ -8,7 +8,9 @@
 </head>
 <body>
     <div class="tablero">
-        <button id="empezar" onclick="empezar()">Empezar</button>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <button id="empezar" onclick="empezarJuego()">Empezar</button>
         <div class="cuadrados">
             <div class="cuadrado cuadrado1" onclick="validar(0)"></div>
             <div class="cuadrado cuadrado2" onclick="validar(1)"></div>
@@ -17,6 +19,8 @@
         </div>
         <div id="contador">Nivel: 0</div>
         <div id="puntuacion">Puntuación: 0</div>
+        <div id="jugador">Jugador: </div>
+        <div id="puntuacionMaxima">Puntuación Máxima: 0</div>
     </div>
     <script src="app.js"></script>
 </body>

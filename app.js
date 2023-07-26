@@ -4,6 +4,42 @@ var nivel = 0;
 var contador = 0;
 var juegoIniciado = false;
 var puntuacion = 0;
+var jugadorNombre = "";
+
+document.getElementById("nombre").addEventListener("input", function (event) {
+  jugadorNombre = event.target.value.trim();
+});
+
+function empezarJuego() {
+  if (jugadorNombre !== "") {
+    juegoIniciado = true;
+    mostrarNombre();
+    reiniciarJuego();
+    siguienteNivel();
+  } else {
+    alert("Por favor, ingresa tu nombre antes de empezar el juego.");
+  }
+}
+
+function mostrarNombre() {
+  var jugadorElemento = document.getElementById("jugador");
+  jugadorElemento.textContent = "Jugador: " + jugadorNombre;
+}
+
+function obtenerPuntuacionMaxima() {
+  var puntuacionMaxima = localStorage.getItem("puntuacionMaxima");
+  return puntuacionMaxima
+    ? JSON.parse(puntuacionMaxima)
+    : { nombre: "", puntuacion: 0 };
+}
+
+function guardarPuntuacionMaxima() {
+  var puntuacionMaxima = obtenerPuntuacionMaxima();
+  if (puntuacion > puntuacionMaxima.puntuacion) {
+    puntuacionMaxima = { nombre: jugadorNombre, puntuacion: puntuacion };
+    localStorage.setItem("puntuacionMaxima", JSON.stringify(puntuacionMaxima));
+  }
+}
 
 cuadrados.forEach(function (cuadrado) {
   cuadrado.addEventListener("click", function () {
@@ -61,6 +97,7 @@ function validar(cuadradoIndex) {
       if (contador === nivel) {
         contador = 0;
         puntuacion++;
+        actualizarContador();
         setTimeout(function () {
           siguienteNivel();
         }, 1000);
@@ -73,6 +110,7 @@ function validar(cuadradoIndex) {
 
 function perder() {
   alert("Perdiste. Inténtalo de nuevo.");
+  guardarPuntuacionMaxima();
   reiniciarJuego();
 }
 
@@ -83,6 +121,7 @@ function reiniciarJuego() {
   puntuacion = 0;
   secuencia = [];
   actualizarContador();
+  mostrarNombre();
 }
 
 function actualizarContador() {
@@ -90,6 +129,14 @@ function actualizarContador() {
   contadorElemento.textContent = "Nivel: " + nivel;
   var puntuacionElemento = document.getElementById("puntuacion");
   puntuacionElemento.textContent = "Puntuación: " + puntuacion;
+  var puntuacionMaximaElemento = document.getElementById("puntuacionMaxima");
+  var puntuacionMaxima = obtenerPuntuacionMaxima();
+  puntuacionMaximaElemento.textContent =
+    "Puntuación Máxima: " +
+    puntuacionMaxima.puntuacion +
+    " (" +
+    puntuacionMaxima.nombre +
+    ")";
 }
 
 function reiniciarContador() {
