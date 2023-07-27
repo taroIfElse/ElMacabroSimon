@@ -93,11 +93,12 @@ function iluminarCuadrado(cuadradoIndex) {
 function validar(cuadradoIndex) {
   if (cuadradoIndex === secuencia[contador]) {
     contador++;
+    puntuacion++; // Incrementar la puntuación por cada clic en un cuadrado correcto
+    actualizarContador();
+
     if (contador === secuencia.length) {
       if (contador === nivel) {
         contador = 0;
-        puntuacion++;
-        actualizarContador();
         setTimeout(function () {
           siguienteNivel();
         }, 1000);
@@ -107,7 +108,6 @@ function validar(cuadradoIndex) {
     perder();
   }
 }
-
 function perder() {
   alert("Perdiste. Inténtalo de nuevo.");
   guardarPuntuacionMaxima();
