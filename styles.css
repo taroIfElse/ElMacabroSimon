@@ -4,47 +4,101 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-}
-
-.tablero {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+  }
+  
+  .tablero {
     position: relative;
-    padding: 10px;
-}
-
-.cuadrados {
-    display: inline-grid;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .cuadrados {
+    display: grid;
     grid-gap: 10px;
-    grid-template-columns: auto auto;
-}
-
-.cuadrado {
-    width: 250px;
-    height: 250px;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    margin-top: 20px;
+  }
+  
+  .cuadrado {
+    width: 200px;
+    height: 200px;
     cursor: pointer;
-}
+    border-radius: 10px;
+    transition: transform 0.2s;
+  }
+  
+  .cuadrado1 {
+    background-color: #ff5a5a;
+  }
+  
+  .cuadrado2 {
+    background-color: #ffd659;
+  }
+  
+  .cuadrado3 {
+    background-color: #5abaff;
+  }
+  
+  .cuadrado4 {
+    background-color: #65ff65;
+  }
+  
+  .iluminado {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  #nombre,
+  #empezar {
+    font-size: 16px;
+    margin-right: 10px;
+  }
 
-.cuadrado1 {
-    background-color: red;
-}
-
-.cuadrado2 {
-    background-color: yellow;
-}
-
-.cuadrado3 {
-    background-color: blue;
-}
-
-.cuadrado4 {
-    background-color: green;
-}
-
-.iluminado {
+  .iluminado {
     box-shadow: 0 0 50px rgb(10, 0, 0);
 }
-
-@media (max-width: 768px) {
+  
+  #empezar {
+    padding: 8px 16px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  #empezar:hover {
+    background-color: #0056b3;
+  }
+  
+  #contador,
+  #puntuacion,
+  #jugador,
+  #puntuacionMaxima {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 768px) {
     .cuadrado {
-        height: 150px;
+      width: 120px;
+      height: 120px;
     }
-}
+  
+    #nombre,
+    #empezar {
+      font-size: 14px;
+    }
+  
+    #contador,
+    #puntuacion,
+    #jugador,
+    #puntuacionMaxima {
+      font-size: 16px;
+    }
+  }

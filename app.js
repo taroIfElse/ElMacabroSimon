@@ -93,7 +93,7 @@ function iluminarCuadrado(cuadradoIndex) {
 function validar(cuadradoIndex) {
   if (cuadradoIndex === secuencia[contador]) {
     contador++;
-    puntuacion++; // Incrementar la puntuación por cada clic en un cuadrado correcto
+    puntuacion++;
     actualizarContador();
 
     if (contador === secuencia.length) {
