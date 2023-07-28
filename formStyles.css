@@ -56,7 +56,6 @@ body {
     background-color: #0056b3;
   }
   
-  /* Estilos para pantallas móviles en posición vertical */
   @media screen and (max-width: 767px) {
     form {
       width: 100%;
