@@ -5,6 +5,8 @@ var contador = 0;
 var juegoIniciado = false;
 var puntuacion = 0;
 var jugadorNombre = "";
+var tiempoTranscurrido = 0;
+var intervaloTiempo;
 
 document.getElementById("nombre").addEventListener("input", function (event) {
   jugadorNombre = event.target.value.trim();
@@ -16,6 +18,7 @@ function empezarJuego() {
     mostrarNombre();
     reiniciarJuego();
     siguienteNivel();
+    iniciarTemporizador();
   } else {
     alert("Por favor, ingresa tu nombre antes de empezar el juego.");
   }
@@ -120,8 +123,11 @@ function reiniciarJuego() {
   contador = 0;
   puntuacion = 0;
   secuencia = [];
+  tiempoTranscurrido = 0;
   actualizarContador();
+  actualizarTiempo();
   mostrarNombre();
+  reiniciarTemporizador();
 }
 
 function actualizarContador() {
@@ -142,4 +148,22 @@ function actualizarContador() {
 function reiniciarContador() {
   var contadorElemento = document.getElementById("contador");
   contadorElemento.textContent = "Nivel: 0";
+}
+
+function iniciarTemporizador() {
+  intervaloTiempo = setInterval(function () {
+    tiempoTranscurrido++;
+    actualizarTiempo();
+  }, 1000);
+}
+
+function actualizarTiempo() {
+  var tiempoElemento = document.getElementById("tiempo");
+  tiempoElemento.textContent = tiempoTranscurrido + " segundos";
+}
+
+function reiniciarTemporizador() {
+  clearInterval(intervaloTiempo);
+  tiempoTranscurrido = 0;
+  actualizarTiempo();
 }
