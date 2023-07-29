@@ -7,6 +7,7 @@ var puntuacion = 0;
 var jugadorNombre = "";
 var tiempoTranscurrido = 0;
 var intervaloTiempo;
+var tiempoUltimaResta = 0;
 
 document.getElementById("nombre").addEventListener("input", function (event) {
   jugadorNombre = event.target.value.trim();
@@ -124,6 +125,7 @@ function reiniciarJuego() {
   puntuacion = 0;
   secuencia = [];
   tiempoTranscurrido = 0;
+  tiempoUltimaResta = 0;
   actualizarContador();
   actualizarTiempo();
   mostrarNombre();
@@ -153,8 +155,23 @@ function reiniciarContador() {
 function iniciarTemporizador() {
   intervaloTiempo = setInterval(function () {
     tiempoTranscurrido++;
+    verificarPuntos();
     actualizarTiempo();
   }, 1000);
+}
+
+function verificarPuntos() {
+  if (tiempoTranscurrido - tiempoUltimaResta >= 10) {
+    tiempoUltimaResta = tiempoTranscurrido;
+    restarPuntos();
+  }
+}
+
+function restarPuntos() {
+  if (puntuacion > 0) {
+    puntuacion--;
+    actualizarContador();
+  }
 }
 
 function actualizarTiempo() {
