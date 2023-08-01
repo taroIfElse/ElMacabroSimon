@@ -19,7 +19,7 @@ function validadorNombre() {
   const nombreInput = document.getElementById("nombre");
   const nombre = nombreInput.value.trim();
   if (nombre === "") {
-    mostrarError(nombreInput, "El nombre es obligatorio");
+    alert("Por favor introduzca un nombre");
     return false;
   }
   return true;
@@ -29,7 +29,7 @@ function validadorApellido() {
   const apellidoInput = document.getElementById("apellido");
   const apellido = apellidoInput.value.trim();
   if (apellido === "") {
-    mostrarError(apellidoInput, "El apellido es obligatorio");
+    alert("Por favor introduzca un apellido");
     return false;
   }
   return true;
@@ -39,10 +39,7 @@ function validadorEdad() {
   const edadInput = document.getElementById("edad");
   const edad = parseInt(edadInput.value);
   if (isNaN(edad) || edad <= 0) {
-    mostrarError(
-      edadInput,
-      "La edad debe ser un número válido y mayor que cero"
-    );
+    alert("Debe ser un numero mayor a 0");
     return false;
   }
   return true;
@@ -52,10 +49,7 @@ function validadorPuntos() {
   const puntosMaximosInput = document.getElementById("puntos-maximos");
   const puntosMaximos = parseInt(puntosMaximosInput.value);
   if (isNaN(puntosMaximos) || puntosMaximos < 0) {
-    mostrarError(
-      puntosMaximosInput,
-      "Los puntos máximos deben ser un número válido y mayor o igual a cero"
-    );
+    alert("Debe ser un numero mayor a 0");
     return false;
   }
   return true;
@@ -65,10 +59,7 @@ function validadorNivel() {
   const nivelMaximoInput = document.getElementById("nivel-maximo");
   const nivelMaximo = parseInt(nivelMaximoInput.value);
   if (isNaN(nivelMaximo) || nivelMaximo < 0) {
-    mostrarError(
-      nivelMaximoInput,
-      "El nivel máximo debe ser un número válido y mayor o igual a cero"
-    );
+    alert("Debe ser un numero mayor a 0");
     return false;
   }
   return true;
