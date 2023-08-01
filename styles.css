@@ -1,128 +1,128 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-  }
-  
-  .tablero {
-    position: relative;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  .cuadrados {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    margin-top: 20px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
+.tablero {
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.cuadrados {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.cuadrado {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.cuadrado1 {
+  background-color: #ff5a5a;
+}
+
+.cuadrado2 {
+  background-color: #ffd659;
+}
+
+.cuadrado3 {
+  background-color: #5abaff;
+}
+
+.cuadrado4 {
+  background-color: #65ff65;
+}
+
+.iluminado {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#nombre,
+#empezar {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.iluminado {
+  box-shadow: 0 0 50px #0a0000;
+}
+
+#empezar {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#empezar:hover {
+  background-color: #0056b3;
+}
+
+#contador,
+#puntuacion,
+#jugador,
+#puntuacionMaxima {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+a:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
   .cuadrado {
-    width: 200px;
-    height: 200px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
+    width: 120px;
+    height: 120px;
+    font-size: 18px;
   }
-  
-  .cuadrado1 {
-    background-color: #ff5a5a;
-  }
-  
-  .cuadrado2 {
-    background-color: #ffd659;
-  }
-  
-  .cuadrado3 {
-    background-color: #5abaff;
-  }
-  
-  .cuadrado4 {
-    background-color: #65ff65;
-  }
-  
-  .iluminado {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  }
-  
+
   #nombre,
   #empezar {
-    font-size: 16px;
-    margin-right: 10px;
+    font-size: 14px;
   }
-  
-  .iluminado {
-    box-shadow: 0 0 50px rgb(10, 0, 0);
-  }
-  
-  #empezar {
-    padding: 10px 20px;
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  #empezar:hover {
-    background-color: #0056b3;
-  }
-  
+
   #contador,
   #puntuacion,
   #jugador,
   #puntuacionMaxima {
-    font-size: 18px;
-    margin-top: 10px;
-  }
-  
-  a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
     font-size: 16px;
-    transition: background-color 0.2s;
   }
-  
-  a:hover {
-    background-color: #0056b3;
-  }
-
-  @media (max-width: 768px) {
-    .cuadrado {
-      width: 120px;
-      height: 120px;
-      font-size: 18px;
-    }
-  
-    #nombre,
-    #empezar {
-      font-size: 14px;
-    }
-  
-    #contador,
-    #puntuacion,
-    #jugador,
-    #puntuacionMaxima {
-      font-size: 16px;
-    }
-  }
+}
