@@ -55,11 +55,6 @@ cuadrados.forEach(function (cuadrado) {
   });
 });
 
-function empezar() {
-  reiniciarJuego();
-  siguienteNivel();
-}
-
 function siguienteNivel() {
   nivel++;
   contador = 0;
