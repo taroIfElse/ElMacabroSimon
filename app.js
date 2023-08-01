@@ -21,7 +21,7 @@ function empezarJuego() {
     siguienteNivel();
     iniciarTemporizador();
   } else {
-    alert("Por favor, ingresa tu nombre antes de empezar el juego.");
+    mostrarModalError("Por favor ingresa un nombre");
   }
 }
 
@@ -108,7 +108,7 @@ function validar(cuadradoIndex) {
   }
 }
 function perder() {
-  alert("Perdiste. Inténtalo de nuevo.");
+  mostrarModalError("Perdiste");
   guardarPuntuacionMaxima();
   reiniciarJuego();
 }
@@ -178,4 +178,16 @@ function reiniciarTemporizador() {
   clearInterval(intervaloTiempo);
   tiempoTranscurrido = 0;
   actualizarTiempo();
+}
+
+function mostrarModalError(mensaje) {
+  var modal = document.getElementById("modal");
+  var mensajeError = document.getElementById("mensajeError");
+  mensajeError.textContent = mensaje;
+  modal.style.display = "block";
+}
+
+function cerrarModal() {
+  var modal = document.getElementById("modal");
+  modal.style.display = "none";
 }

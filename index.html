@@ -7,6 +7,12 @@
     <title>Simon Dice</title>
 </head>
 <body>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="cerrarModal()">X</span>
+          <p id="mensajeError"></p>
+        </div>
+      </div>
     <div class="tablero">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" required>

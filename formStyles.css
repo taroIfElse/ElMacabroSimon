@@ -59,6 +59,27 @@ button:hover {
   background-color: #0056b3;
 }
 
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+
 @media screen and (max-width: 767px) {
   form {
     width: 100%;
